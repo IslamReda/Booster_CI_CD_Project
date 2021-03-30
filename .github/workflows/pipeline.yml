@@ -15,6 +15,6 @@ jobs:
     - name: Build the Docker image
       run: | 
           docker build . --file Dockerfile --tag islamreda/booster:v10
-          docker login -u ${{ DOCKERUSERNAME }} -p ${{ DOCKERPASSWORD }}
+          docker login -u ${{ secrets.DOCKERUSERNAME }} -p ${{ secrets.DOCKERPASSWORD }}
           docker push islamreda/booster:v10
           
